@@ -5,7 +5,7 @@ import Header from "@/components/Header.vue";
 import Card from "@/components/Card.vue";
 import UiInput from "@/components/kit/UiInput.vue";
 import UiToggle from "@/components/kit/UiToggle.vue";
-import {computed, onMounted, onUnmounted, ref} from "vue";
+import {ref} from "vue";
 
 const cardData = ref<Array<Object>>([{
   sendTime: "Перед рассветом",
@@ -47,8 +47,8 @@ const uncheckSubAll = () => subscribeToAll.value = false
     <div class="py-6 sm:py-12 min-w-96 max-w-5xl mx-auto">
       <Header/>
 
-      <main class="h-full w-screen lg:w-full bg-[#F5F5F8] lg:rounded-2xl py-8 px-4 sm:px-0 sm:py-12">
-        <div class="sm:px-12 flex flex-col gap-y-4">
+      <main class="h-full w-screen lg:w-full bg-[#F5F5F8] lg:rounded-2xl px-4 py-8 sm:px-0 sm:py-12">
+        <div class="flex flex-col gap-y-4 sm:px-12">
           <div class="font-medium sm:pb-2 text-start sm:text-center">Выберите рассылки, которые подходят именно вам</div>
 
           <ui-input placeholder="Электронная почта" btn-label="Подписаться"/>

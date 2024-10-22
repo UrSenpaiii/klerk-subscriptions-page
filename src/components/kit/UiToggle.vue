@@ -17,7 +17,7 @@ const sizes = ref<Sizes>({
 </script>
 
 <template>
-  <label class="inline-flex items-center cursor-pointer">
+  <label class="inline-flex gap-x-2 items-center cursor-pointer w-fit">
     <input type="checkbox" class="sr-only peer" v-model="model">
 
     <div :class="sizes[size]"
@@ -27,6 +27,6 @@ const sizes = ref<Sizes>({
                 after:content-[''] after:absolute after:top-[1px] after:start-[2px] after:rounded-full"
     />
 
-    <span class="ms-2 text-sm">{{ label }}</span>
+    <span class="text-sm">{{ label }}</span>
   </label>
 </template>

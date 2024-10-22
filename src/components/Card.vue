@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Check from "@/components/icons/Check.vue";
 import UiToggle from "@/components/kit/UiToggle.vue";
 import {computed, ref, watch} from "vue";
 
@@ -27,7 +26,7 @@ watch(() => subscribe.value, v => {
 </script>
 
 <template>
-  <div class="bg-white p-6 gap-x-6 rounded-2xl hover:shadow-lg transition-all">
+  <div class="bg-white p-6 rounded-2xl hover:shadow-lg transition-all">
     <div class="grid gap-y-4 text-left">
       <div class="grid grid-cols-4">
         <div class="col-span-3 sm:col-span-3">
@@ -48,9 +47,9 @@ watch(() => subscribe.value, v => {
         </p>
       </div>
 
-      <div class="grid gap-2 text-sm pb-0 sm:pb-6">
+      <div class="grid gap-2 pb-2 sm:pb-0 text-sm">
         <div v-for="feature in features" class="flex gap-2 items-center">
-          <check/>
+          <img src="@/assets/img/icons/Check.svg" alt="Check"/>
           <span v-html="feature"/>
         </div>
       </div>
