@@ -5,7 +5,7 @@ import Header from "@/components/Header.vue";
 import Card from "@/components/Card.vue";
 import UiInput from "@/components/kit/UiInput.vue";
 import UiToggle from "@/components/kit/UiToggle.vue";
-import {ref} from "vue";
+import {computed, onMounted, onUnmounted, ref} from "vue";
 
 const cardData = ref<Array<Object>>([{
   sendTime: "Перед рассветом",
@@ -32,7 +32,7 @@ const cardData = ref<Array<Object>>([{
   sendTime: "По мере появления анонсов",
   title: "Чемодан вебинаров",
   description: "Подборка с анонсами бесплатных вебинаров на самые топовые темы при участии экспертов.",
-  features: ["<span class='font-medium'>Никогда не пришлем платные вебинары\", \"Подборка топовых тем для вебинаров</span>"],
+  features: ["<span class='font-medium'>Никогда не пришлем платные вебинары", "Подборка топовых тем для вебинаров</span>"],
   subscribers: 92082,
   imgPath: "/src/assets/img/Frame%203511.png"
 }])
@@ -44,20 +44,19 @@ const uncheckSubAll = () => subscribeToAll.value = false
 
 <template>
   <div class="h-screen w-screen">
-    <div class="flex flex-col justify-between h-full items-center py-12 max-w-5xl mx-auto">
+    <div class="py-6 sm:py-12 min-w-96 max-w-5xl mx-auto">
       <Header/>
-      <main class="h-full w-full bg-[#F5F5F8] rounded-2xl py-12">
 
-        <div class="px-12">
-          <div class="font-medium pb-6">Выберите рассылки, которые подходят именно вам</div>
-          <div class="flex flex-col items-start gap-y-4">
-            <ui-input placeholder="Электронная почта" btn-label="Подписаться"/>
+      <main class="h-full w-screen lg:w-full bg-[#F5F5F8] lg:rounded-2xl py-8 px-4 sm:px-0 sm:py-12">
+        <div class="sm:px-12 flex flex-col gap-y-4">
+          <div class="font-medium sm:pb-2 text-start sm:text-center">Выберите рассылки, которые подходят именно вам</div>
 
-            <ui-toggle v-model="subscribeToAll" size="sm" label="Подписаться на все рассылки"/>
-          </div>
+          <ui-input placeholder="Электронная почта" btn-label="Подписаться"/>
+
+          <ui-toggle v-model="subscribeToAll" size="sm" label="Подписаться на все рассылки"/>
         </div>
 
-        <div class="grid grid-cols-2 gap-6 px-6 pt-8">
+        <div class="grid md:grid-cols-2 gap-6 sm:px-6 pt-8">
           <card v-for="(data, i) in cardData" :key="i"
                 :send-time="data.sendTime"
                 :title="data.title"

@@ -27,21 +27,28 @@ watch(() => subscribe.value, v => {
 </script>
 
 <template>
-  <div class="flex justify-between bg-white p-6 gap-x-6 rounded-2xl hover:shadow-lg transition-all">
+  <div class="bg-white p-6 gap-x-6 rounded-2xl hover:shadow-lg transition-all">
     <div class="grid gap-y-4 text-left">
-      <div>
-        <div class="text-secondary">
-          {{ sendTime }}
+      <div class="grid grid-cols-4">
+        <div class="col-span-3 sm:col-span-3">
+          <div class="text-secondary">
+            {{ sendTime }}
+          </div>
+          <div class="text-xl font-medium">
+            {{ title }}
+          </div>
         </div>
-        <div class="text-xl font-medium">
-          {{ title }}
+
+        <div class="sm:row-span-2 justify-self-end max-w-fit">
+          <img :src="imgUrl" class="size-10 sm:size-20 rounded-lg" alt="poster">
         </div>
-        <p class="pt-2 text-sm text-[#666]">
+
+        <p class="col-span-4 sm:col-span-3 pt-2 text-sm text-[#666] max-w-full">
           {{ description }}
         </p>
       </div>
 
-      <div class="grid gap-2 text-sm">
+      <div class="grid gap-2 text-sm pb-0 sm:pb-6">
         <div v-for="feature in features" class="flex gap-2 items-center">
           <check/>
           <span v-html="feature"/>
@@ -50,7 +57,5 @@ watch(() => subscribe.value, v => {
 
       <ui-toggle v-model="subscribe" :label="`Уже получает ${formateSubs} человек`"/>
     </div>
-
-    <img :src="imgUrl" class="size-20 rounded-lg" alt="poster">
   </div>
 </template>
