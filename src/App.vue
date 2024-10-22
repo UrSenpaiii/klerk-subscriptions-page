@@ -43,11 +43,11 @@ const uncheckSubAll = () => subscribeToAll.value = false
 </script>
 
 <template>
-  <div class="h-screen w-screen">
-    <div class="py-6 sm:py-12 min-w-96 max-w-5xl mx-auto">
+  <div class="h-screen">
+    <div class="py-6 sm:py-12  max-w-5xl mx-auto">
       <Header/>
 
-      <main class="h-full w-screen lg:w-full bg-[#F5F5F8] lg:rounded-2xl px-4 py-8 sm:px-0 sm:py-12">
+      <main class="h-full lg:w-full bg-[#F5F5F8] lg:rounded-2xl px-4 py-8 sm:px-0 sm:py-12">
         <div class="flex flex-col gap-y-4 sm:px-12">
           <div class="font-medium sm:pb-2 text-start sm:text-center">Выберите рассылки, которые подходят именно вам</div>
 
